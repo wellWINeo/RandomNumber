@@ -1,0 +1,155 @@
+.theme-light {
+    --body-bg: #D8DEE9;
+    --element-bg: #e5e9f0;
+    --element-shadow: #c5c8ce;
+    --element-shadow-accent: #ffffff;
+    --color-text: #434c5e;
+    --color-accent: #ebcb8b;
+}
+
+.theme-dark {
+    --body-bg: #2e3440;
+    --element-bg: #2e3440;
+    --element-shadow: #292e39;
+    --element-shadow-accent: #333a47;
+    --color-text: #eceff4;
+    --color-accent: #88c0d0;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background: var(--body-bg);
+}
+
+.content{
+    width: 350px;
+    margin-top: 15%;
+    padding: 30px 40px;
+    border-radius: 50px;
+    background: var(--element-bg);
+    box-shadow:  20px 20px 45px var(--element-shadow),
+                 -20px -20px 45px var(--element-shadow-accent);
+}
+
+.content .field{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+input, select, textarea, label {
+    color: var(--color-text)
+}
+
+.field input {
+    height: 100%;
+    width: 100%;
+    padding-left: 45px;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    background: var(--element-bg);
+    border-radius: 25px;
+    box-shadow: inset 2px 2px 5px var(--element-shadow),
+              inset -5px -5px 10px var(--element-shadow-accent);
+    transition: box-shadow 1s;
+}
+
+.field input:focus {
+    box-shadow:  26px 26px 52px var(--element-shadow),
+                 -26px -26px 52px var(--element-shadow-accent);
+    transition: box-shadow 1s; }
+
+.field label{
+  position: absolute;
+  top: 50%;
+  left: 45px;
+  pointer-events: none;
+  color: var(--color-text);
+  transform: translateY(-50%);
+}
+
+.submit {
+    width: 120px;
+    height: 40px;
+    color: var(--color-text);
+    border: 0;
+    border-radius: 50px;
+    background: var(--element-bg);
+    box-shadow:  2px 2px 5px var(--element-shadow),
+                 -5px -5px 10px var(--element-shadow-accent);
+}
+
+.submit:active {
+    transform: scale(0.98);
+    box-shadow:  inset 2px 2px 5px var(--element-shadow),
+                 inset -5px -5px 10px var(--element-shadow-accent);
+}
+
+/* The switch - the box around the slider */
+.switch {
+    margin-left: 95%;
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-accent);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--element-bg);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+disable spin button for input fields
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}

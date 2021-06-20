@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>RNG!</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+</head>
+
+<body>
+    
+    <label class="switch">
+        <input type="checkbox" id="inputCheckbox" onclick="toggleTheme()">
+        <span class="slider round" name="spanSlider"></span>
+    </label>
+
+    <form class="content">
+        <div class="field">
+            <input type="number" id="inputMin" aria-label="minimal"
+                class="input-field" placeholder="min" 
+                onclick="inputAnimate(this)"> 
+        </div>
+
+        <br/>
+
+        <div class="field">
+            <input type="number" id="inputMax" aria-label="maximum" 
+                class="input-field" placeholder="max"
+                onclick="inputAnimate(this)"> 
+        </div>
+        
+        <br/>
+        
+        <div id="divResult"></div>
+        
+        <br />
+        
+        <input type="submit" id="inputSubmit" class="submit"
+            onclick="Random(); return false" />
+    </form>
+
+</body>
+
+</html>
